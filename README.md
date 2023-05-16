@@ -3,38 +3,53 @@ Sub Challenge_2()
 ' set all the variables that we are going to use in the equations later in the code
 ' the name of the ticker
 Dim ticker As String
+
 ' the # of tickers in each worksheet
 Dim ticker_count As Double
+
 ' last row in the worksheet
 Dim thelastrow As Long
+
 ' the opening price for a ticker on a row
 Dim open_price As Double
+
 ' the closing price for a ticker on a row
 Dim close_price As Double
+
 ' the change in the price by the year
 Dim yearly_change As Double
+
 ' the percent of the change in comparison to the open price
 Dim percent_change As Double
+
 ' the total stock volume for a ticker
 Dim total_stock_vol As Double
+
 ' the greatest increase in price as a percent
 Dim greatest_percent_inc As Double
+
 ' the name of the ticker with the greatest percent increase
 Dim greatest_percent_inc_name As String
+
 ' the greatest decrease in price as a percent
 Dim greatest_percent_dec As Double
+
 ' the name of the ticker with the greatest percent decrease
 Dim greatest_percent_dec_name As String
+
 ' the highest volume for a ticker
 Dim greatest_stock_vol As Double
+
 ' the name of the ticker with the highest volume
 Dim greatest_stock_vol_name As String
 
 ' loop in through each worksheet in the workbook
 For Each ws In Worksheets
-
+    
+    'activate the worksheet you are in to run the code
     ws.Activate
     
+    ' set up variable for the last row
     thelastrow = ws.Cells(Rows.Count, "A").End(xlUp).Row
 
     ' labels for chart 1
@@ -116,7 +131,7 @@ For Each ws In Worksheets
     Range("P1").Value = "Ticker"
     Range("Q1").Value = "Value"
     
-    ' set the last row again
+    ' set the last row again, but this time for the I column 
     thelastrow = ws.Cells(Rows.Count, "I").End(xlUp).Row
     
     ' identify where values are in the ws
